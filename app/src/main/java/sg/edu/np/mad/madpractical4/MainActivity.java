@@ -1,9 +1,20 @@
 package sg.edu.np.mad.madpractical4;
 
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -12,11 +23,17 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.ArrayList;
 import java.util.Random;
 
+import sg.edu.np.mad.madpractical4.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
+
+    ActivityMainBinding binding;
+    ListAdapter listAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());    
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -45,5 +62,42 @@ public class MainActivity extends AppCompatActivity {
         // Adapter - Custom Adapter
         UserAdapter listAdapter = new UserAdapter(this, mainTitle, description);
         listView.setAdapter(listAdapter);
+        listView.setClickable(true);
+
+        //ImageView triggerImg = findViewById(R.id.image);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("MAINACTIVITY", "Clicked!");
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Profile");
+                builder.setMessage("MADness");
+
+                builder.setCancelable(false);
+
+                Random random = new Random();
+                ListView listView = findViewById(R.id.ListView);
+
+
+                builder.setPositiveButton("View", (DialogInterface.OnClickListener) (dialog, which) -> {
+                    String randomNumber = Integer.toString(random.nextInt(999999999));
+
+                    // Launch MainActivity Page
+                    Intent intent = new Intent (MainActivity.this, ProfilePage.class);
+                    intent.putExtra("randomNumber", randomNumber);
+                    startActivity(intent);
+                });
+
+                builder.setNegativeButton("Close", (dialog, which) -> {
+                    // If user click no then dialog box is canceled.
+                    dialog.cancel();
+                });
+
+                // Create the Alert dialog
+                AlertDialog alertDialog = builder.create();
+                // Show the Alert Dialog box
+                alertDialog.show();
+            }
+        });
     }
 }

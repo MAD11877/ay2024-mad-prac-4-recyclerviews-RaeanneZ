@@ -44,6 +44,8 @@ public class UserAdapter extends ArrayAdapter<String> {
         TextView desc = rowView.findViewById(R.id.description);
         ImageView image = rowView.findViewById(R.id.image);
 
+
+
         // Set data inside
         titleText.setText(mainTitle.get(position));
         desc.setText(description.get(position));
