@@ -1,10 +1,10 @@
 package sg.edu.np.mad.madpractical4;
 
 public class User {
-    String name;
-    String description;
-    int id;
-    boolean followed;
+    static String name;
+    static String description;
+    static int id;
+    static boolean followed;
 
     public User() {
 

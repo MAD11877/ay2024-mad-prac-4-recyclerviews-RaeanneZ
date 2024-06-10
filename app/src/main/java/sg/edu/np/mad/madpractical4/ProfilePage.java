@@ -32,19 +32,19 @@ public class ProfilePage extends AppCompatActivity {
 
         //display user info (name and desc) in labels
         TextView headerTextView = findViewById(R.id.Header);
-        headerTextView.setText(userObj.name);
+        headerTextView.setText(User.name);
 
         TextView bodyTextView = findViewById(R.id.BodyText);
-        bodyTextView.setText(userObj.description);
+        bodyTextView.setText(User.description);
 
         //get buttons and define listeners
         Button followBtn = findViewById(R.id.FollowBtn);
         followBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userObj.followed = (!userObj.followed);
+                User.followed = (!User.followed);
 
-                if (userObj.followed){
+                if (User.followed){
                     followBtn.setText("UNFOLLOW");
                     // Toast.LENGTH_SHORT means the pop up will only show for short period of time
                     Toast.makeText(ProfilePage.this, "Unfollowed", Toast.LENGTH_SHORT).show();

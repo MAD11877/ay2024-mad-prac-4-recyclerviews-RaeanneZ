@@ -28,8 +28,10 @@
         android:id="@+id/ListView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="75dp" />
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Banner" />
 
     <!--    <ImageView-->
 <!--        android:id="@+id/Image"-->

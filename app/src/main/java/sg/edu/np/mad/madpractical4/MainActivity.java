@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     ListAdapter listAdapter;
 
+    String randomNumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,12 +52,10 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> description = new ArrayList<String>();
 
         for (int i = 0; i < 20; i++) {
-            String title = "Name " + random.nextInt(99999999);
+            randomNumber = Integer.toString(random.nextInt(99999999));
+            String title = "Name " + randomNumber;
             mainTitle.add(title);
-        }
-
-        for (int i = 0; i < 20; i++) {
-            String desc = "Description " + random.nextInt(99999999);
+            String desc = "Description " + randomNumber;
             description.add(desc);
         }
 
@@ -75,14 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
                 builder.setCancelable(false);
 
-                Random random = new Random();
-                ListView listView = findViewById(R.id.ListView);
-
-
                 builder.setPositiveButton("View", (DialogInterface.OnClickListener) (dialog, which) -> {
-                    String randomNumber = Integer.toString(random.nextInt(999999999));
-
-                    // Launch MainActivity Page
+                    // Launch Profile Page
                     Intent intent = new Intent (MainActivity.this, ProfilePage.class);
                     intent.putExtra("randomNumber", randomNumber);
                     startActivity(intent);

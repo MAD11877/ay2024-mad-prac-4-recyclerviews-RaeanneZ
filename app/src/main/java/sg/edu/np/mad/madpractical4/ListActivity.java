@@ -38,42 +38,5 @@ public class ListActivity extends AppCompatActivity {
             return insets;
 
         });
-
-//        ImageView triggerImg = findViewById(R.id.image);
-//        triggerImg.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Log.d("LISTACTIVITY", "Clicked!");
-//                AlertDialog.Builder builder = new AlertDialog.Builder(ListActivity.this);
-//                builder.setTitle("Profile");
-//                builder.setMessage("MADness");
-//
-//                builder.setCancelable(false);
-//
-//                Random random = new Random();
-//                ListView listView = findViewById(R.id.ListView);
-//
-//
-//                builder.setPositiveButton("View", (DialogInterface.OnClickListener) (dialog, which) -> {
-//                    String randomNumber = Integer.toString(random.nextInt(999999999));
-//
-//                    // Launch MainActivity Page
-//                    Intent intent = new Intent (ListActivity.this, ProfilePage.class);
-//                    intent.putExtra("randomNumber", randomNumber);
-//                    startActivity(intent);
-//                });
-//
-//                builder.setNegativeButton("Close", (DialogInterface.OnClickListener) (dialog, which) -> {
-//                    // If user click no then dialog box is canceled.
-//                    dialog.cancel();
-//                });
-//
-//                // Create the Alert dialog
-//                AlertDialog alertDialog = builder.create();
-//                // Show the Alert Dialog box
-//                alertDialog.show();
-//            }
-//
-//        });
     }
 }
