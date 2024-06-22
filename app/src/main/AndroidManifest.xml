@@ -16,7 +16,7 @@
             android:name=".ProfilePage"
             android:exported="false" />
         <activity
-            android:name=".ListActivity"
+            android:name=".UserViewHolder"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
