@@ -17,7 +17,7 @@
         android:paddingRight="100dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:background="@color/halo_purple"
+        android:background="@color/holo_purple"
         android:textColor="@color/white"
         android:textSize="32dp"
         android:textStyle="bold"
