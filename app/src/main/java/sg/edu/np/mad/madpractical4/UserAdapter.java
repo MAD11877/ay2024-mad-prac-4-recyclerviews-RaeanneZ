@@ -82,35 +82,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         } else {
             holder.bigImgView.setVisibility(View.GONE);
         }
-
-        /* private void showAlertDialog() {
-            // Create an AlertDialog.Builder
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-            // Set the dialog title and message
-            builder.setTitle("Profile");
-            builder.setMessage("MADness");
-
-            // Set the positive button and its click listener
-            builder.setPositiveButton("View", (dialog, which) -> {
-                // Create an Intent to start the MainActivity
-                Intent intent = new Intent(this, MainActivity.class);
-                // Start the MainActivity
-                this.startActivity(intent);
-                // Do something when the positive button is clicked
-                dialog.dismiss();
-            });
-
-            // Set the negative button and its click listener
-            builder.setNegativeButton("Close", (dialog, which) -> {
-                // Do something when the negative button is clicked
-                dialog.dismiss();
-            });
-
-            // Create and show the AlertDialog
-            AlertDialog dialog = builder.create();
-            dialog.show();
-        } */
     }
 
     @Override
