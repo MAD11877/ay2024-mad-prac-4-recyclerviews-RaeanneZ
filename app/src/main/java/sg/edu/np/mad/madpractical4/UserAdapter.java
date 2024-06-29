@@ -1,6 +1,5 @@
 package sg.edu.np.mad.madpractical4;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
